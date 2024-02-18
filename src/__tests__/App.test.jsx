@@ -177,12 +177,17 @@ describe("App component", () => {
   it("tells the user how many days until next birthday even if they input many years ago bday date", () => {
     render(<App />);
     fireEvent.change(screen.getByPlaceholderText("name"), {target: {value: 'Test Name'}})
-    fireEvent.change(screen.getByLabelText("month-input"), {target: {value: '2000-12'}})
+    fireEvent.change(screen.getByLabelText("month-input"), {target: {value: '2021-12'}})
     fireEvent.change(screen.getByLabelText("day-input"), {target: {value: '01'}})
     fireEvent.click(screen.getByRole("button"))
 
     expect(screen.getByText("Your birthday will be in 334 days, Test Name.")).toBeDefined();
 
   });
+
 }
 )
+
+// Tests still to write:
+// if they put their bday back enough years that leap years impact it
+// Make it that they can't put the wrong date for a month ie maxday changes depending on the month they input
