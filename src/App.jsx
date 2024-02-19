@@ -24,7 +24,7 @@ function App() {
     birthday = new Date(`${month.toString()}-${day.toString()}`)
     let daysDifference = Math.ceil((birthday.getTime() - today.getTime()) / (1000 * 3600 * 24)).toFixed(0)
     console.log(daysDifference)
-    while (daysDifference < -365) {
+    while (daysDifference < -367) {
       daysDifference = parseInt(daysDifference) + 365
     }
     if (daysDifference >= 0) {

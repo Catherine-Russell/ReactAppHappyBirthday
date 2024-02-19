@@ -7,14 +7,12 @@ import { render, fireEvent, screen } from "@testing-library/react";
 
 describe("App component", () => {
     beforeEach(() => {
-        // tell vitest we use mocked time
         vi.useFakeTimers()
         const todayDate = new Date('2024-01-01')
         vi.setSystemTime(todayDate)
       })
     
     afterEach(() => {
-        // restoring date after each test run
         vi.useRealTimers()
       })
   it("display Greeting", () => {
